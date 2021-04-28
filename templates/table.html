@@ -1,0 +1,32 @@
+<html>
+    <style>
+        table, td, th {
+          border: 1px solid black;
+        }
+        
+        table {
+          width: 50%;
+          border-collapse: collapse;
+        }
+    </style>
+        <body> 
+            <table class="table table-bordered",style = "border-collapse: separate;",style ="border-spacing: 15px;">
+                <thead>
+                <tr>
+                    {% for i in column %}
+                        <th scope="col">{{i}}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                    {% for i in row %}
+                        <tr>
+                        {% for j in i %}
+                            <td>{{j}}</td>
+                        {% endfor %} 
+                        </tr>
+                    {% endfor %}               
+                </tbody>
+            </table>
+        </body>
+</html>

@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+<html>
+    <head>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>; -->
+    {% load static %}
+    
+    <title>Site</title>
+    <style>
+        table, td, th {
+          border: 1px solid black;
+        }
+        
+        table {
+          width: 50%;
+          border-collapse: collapse;
+        }
+    </style>
+    </head>
+        <body> 
+            {% block content %}
+            <div id ="spinner-id" class="text-center mt-3">
+                <div class="spinner-border" role="status">
+                </div>
+            </div>
+            <h1>Output of allocation</h1>
+            <div id="databox">
+            <table class="table table-bordered",style = "border-collapse: separate;",style ="border-spacing: 15px;">
+                <thead>
+                <tr>
+                    {% for i in column %}
+                        <th scope="col">{{i}}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                    {% for i in row %}
+                        <tr>
+                        {% for j in i %}
+                            <td>{{j}}</td>
+                        {% endfor %} 
+                        </tr>
+                    {% endfor %}               
+                </tbody>
+            </table>
+            </div>
+            {% endblock content %}
+        </body>
+        <!--{% load static %}
+        <script src="{% static 'fifth.js' %}"type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="{% static "style.css" %}"/>-->
+
+</html>

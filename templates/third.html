@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block tile %}second Page!{% endblock %}
+{% block content %}
+    <h1>2nd page of django!</h1>
+    <h1>{{name}}</h1>
+    <ul>{% for i in options %}
+        <li>{{i}}</li>
+        {% endfor %}
+    </ul>
+    {% if ans %}
+        <h1>number 1 is greater</h1>
+    {% else %}
+        <h1>number 2 is greater</h1>
+    {% endif %}
+    {% endblock %}
